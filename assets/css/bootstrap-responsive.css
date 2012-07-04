@@ -707,6 +707,13 @@
     margin: 0 0 0 -5px;
     padding: 8px 60px 12px;
   background:url('../../img/logo.png')left center no-repeat;
+  transition: background 0.85s ease-in-out;
+-moz-transition: background 0.85s ease-in-out;
+-webkit-transition: background 0.85s ease-in-out;
+-o-transition: background 0.85s ease-in-out;
+  }
+  .navbar .brand:hover {
+  background:url('../../img/logoh.png')left center no-repeat;
   }
   .nav-collapse {
     clear: both;

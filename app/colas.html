@@ -133,32 +133,32 @@
 									<h4 class="page-header">Respuestas</h4>
 									<dl>
 										<dt id="tmed1">
-											Tiempo Medio de Llegada
+											Tiempo Medio de Llegada (1/&lambda;)
 										</dt>
 										<dd id="tmedr1"></dd>
 										<dt id="tmedserv1">
-											Tiempo Medio de Servicio
+											Tiempo Medio de Servicio (1/&mu;)
 										</dt>
 										<dd id="tmedservr1"></dd>
 
 										<dt id="cantesp1">
-											Cantidad de clientes esperada en el sistema
+											Cantidad de clientes esperada en el sistema (L)
 										</dt>
 										<dd id="cantespr1"></dd>
 										<dt id="cantespcol1">
-											Cantidad de clientes esperada en la cola
+											Cantidad de clientes esperada en la cola (L<sub>q</sub>)
 										</dt>
 										<dd id="cantespcolr1"></dd>
 										<dt id="tiesp1">
-											Tiempo total de espera en el sistema
+											Tiempo total de espera en el sistema (W)
 										</dt>
 										<dd id="tiespr1"></dd>
 										<dt id="tiespcol1">
-											Tiempo total de espera en la cola
+											Tiempo total de espera en la cola (W<sub>q</sub>)
 										</dt>
 										<dd id="tiespcolr1"></dd>
 										<dt id="probvac1">
-											Probabilidad de que el sistema este vacio
+											Probabilidad de que el sistema este vacio(P<sub>0</sub>)
 										</dt>
 										<dd id="probvacr1"></dd>
 
@@ -211,10 +211,51 @@
 									<input type="text" name="lambda2" class="input-small" id="lambda2"/>
 									<label for="mu2">&mu;</label>
 									<input type="text" name="mu2" class="input-small" id="mu2"/>
-									<label for="omi2">&omicron;</label>
+									<label for="omi2">&omicron;<sup>2</sup></label>
 									<input type="text" name="omi2" class="input-small" id="omi2"/>
 									<a class="btn" id="calc2" href="javascript:void(0);"><i class="icon-cog"></i>Calcula! </a>
 								</form>
+								<div class="alert hide alert-error" id="error2">
+									<span class="icon-fire icon-white"></span>
+								</div>
+								<div class="hide" id="respuestas2">
+								<dl>
+										<dt id="ro2">
+											&rho;
+										</dt>
+										<dd id="ror2"></dd>
+										<dt id="tmed2">
+											Tiempo Medio de Llegada (1/&lambda;)
+										</dt>
+										<dd id="tmedr2"></dd>
+										<dt id="tmedserv2">
+											Tiempo Medio de Servicio (1/&mu;)
+										</dt>
+										<dd id="tmedservr2"></dd>
+
+										<dt id="cantesp2">
+											Cantidad de clientes esperada en el sistema (L)
+										</dt>
+										<dd id="cantespr2"></dd>
+										<dt id="cantespcol2">
+											Cantidad de clientes esperada en la cola (L<sub>q</sub>)
+										</dt>
+										<dd id="cantespcolr2"></dd>
+										<dt id="tiesp2">
+											Tiempo total de espera en el sistema (W)
+										</dt>
+										<dd id="tiespr2"></dd>
+										<dt id="tiespcol2">
+											Tiempo total de espera en la cola (W<sub>q</sub>)
+										</dt>
+										<dd id="tiespcolr2"></dd>
+										<dt id="probvac2">
+											Probabilidad de que el sistema este vacio(P<sub>0</sub>)
+										</dt>
+										<dd id="probvacr2"></dd>
+
+									</dl>
+								</div>
 							</div>
 
 						</div>
