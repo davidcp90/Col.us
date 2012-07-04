@@ -1,6 +1,7 @@
-Col.us ('colas')
+Col.us ('colas') - Info Español
 ======
-<small>Info Español</small>
+
+
 Aplicación que calcula valores en diferentes tipos de modelos de colas
 
 Archivos Importantes
@@ -12,10 +13,12 @@ Si deseas mejorar esta aplicacion puedes concentrarte en los siguientes archivos
   <li>js/interaccion.js</li>
 </ul>
 <hr/>
-<small>English Info</small>
+Col.us - English Info
+======
+
 This app compute diferent values for queuing theory problems.
 
-Archivos Importantes
+Important Files
 ======
 If you want to improve this application , please focus in the next files (other files in the project are bootstrap assets)
 <ul>
