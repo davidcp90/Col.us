@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Col.Us - Calculadora de Colas</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="App que calcula cualquier tipo de problema de teoria de colas">
+		<meta name="author" content="David Camargo">
+
+		<!-- Le styles -->
+		<link href="../assets/css/bootstrap.css" rel="stylesheet">
+		<style type="text/css">
+			body {
+				padding-top: 60px;
+				padding-bottom: 40px;
+			}
+		</style>
+
+		<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Le fav and touch icons -->
+		<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+	</head>
+
+	<body>
+
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+					<h1 class="brand" >Col.us</h1>
+					<!--<div class="nav-collapse">
+					<ul class="nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+
+					</ul>
+					</div>-->
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+
+			<!-- Main hero unit for a primary marketing message or call to action -->
+			<div class="hero-unit">
+				<h1>Como uso esta app?</h1>
+				<p>
+					De acuerdo al problema que hayas planteado selecciona en el mosaico de la parte inferior el tipo de modelo que deseas resolver,
+					alli encontraras información del modelo y un formulario para introducir las variables que permitiran los calculos
+				</p>
+				<p>
+					<a class="btn btn-primary btn-large" data-toggle="modal" href="#ayuda"><i class="icon-question-sign icon-white"></i>Ayuda para determinar el tipo de problema &raquo;</a>
+				</p>
+				<div class="modal hide" id="ayuda">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							×
+						</button>
+						<h3>Ayuda para determinar el tipo de problema</h3>
+					</div>
+					<div class="modal-body">
+						<p>
+							para determinar el tipo de problema es necesario
+						</p>
+					</div>
+					<div class="modal-footer">
+
+						<a href="#" class="btn btn-danger"data-dismiss="modal"><i class="icon-thumbs-up icon-white"></i>Ya entendi ! , cierrate</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Example row of columns -->
+			<div class="row">
+				<div class="span4">
+					<h2>Modelo M/M/1</h2>
+					<p>
+						Modelo con distribución exponencial de llegada y salida, y 1 servidor.
+					</p>
+					<p>
+						<a class="btn btn-success btn-large" data-toggle="modal" href="#mm1"><i class="icon-th-large icon-white"></i>Resolver ejercicio &raquo;</a>
+					</p>
+				</div>
+				<div class="modal hide" id="mm1">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							×
+						</button>
+						<h3>Modelo M/M/1</h3>
+					</div>
+					<div class="modal-body">
+
+						<ul class="nav nav-tabs" id="mm1tabs">
+							<li class="active">
+								<a href="#definicion">Imformación del Modelo</a>
+							</li>
+							<li>
+								<a href="#calculador">Calculador</a>
+							</li>
+
+						</ul>
+
+						<div class="tab-content">
+							<div class="tab-pane active" id="definicion">
+								1
+							</div>
+							<div class="tab-pane" id="calculador">
+								<div class="alert alert-info">
+									Para desarrollar este modelo debes saber cual es la tasa media de llegadas <strong>(&lambda;)</strong> y la
+									tasa media de servicio<strong>(&mu;)</strong>.
+								</div>
+								<form class="well form-inline">
+									<label for="lambda1">&lambda;</label>
+									<input type="text" name="lambda1" class="input-small" id="lambda1"/>
+									<label for="mu1">&mu;</label>
+									<input type="text" name="mu1" class="input-small" id="mu1"/>
+									<a class="btn" id="calc1" href="javascript:void(0);"><i class="icon-cog"></i>Calcula! </a>
+								</form>
+								<div class="alert hide alert-error" id="error1">
+									<span class="icon-fire icon-white"></span>
+								</div>
+								<div class="hide" id="respuestas1">
+									<h4 class="page-header">Respuestas</h4>
+									<dl>
+										<dt id="tmed1">
+											Tiempo Medio de Llegada
+										</dt>
+										<dd id="tmedr1"></dd>
+										<dt id="tmedserv1">
+											Tiempo Medio de Servicio
+										</dt>
+										<dd id="tmedservr1"></dd>
+
+										<dt id="cantesp1">
+											Cantidad de clientes esperada en el sistema
+										</dt>
+										<dd id="cantespr1"></dd>
+										<dt id="cantespcol1">
+											Cantidad de clientes esperada en la cola
+										</dt>
+										<dd id="cantespcolr1"></dd>
+										<dt id="tiesp1">
+											Tiempo total de espera en el sistema
+										</dt>
+										<dd id="tiespr1"></dd>
+										<dt id="tiespcol1">
+											Tiempo total de espera en la cola
+										</dt>
+										<dd id="tiespcolr1"></dd>
+										<dt id="probvac1">
+											Probabilidad de que el sistema este vacio
+										</dt>
+										<dd id="probvacr1"></dd>
+
+									</dl>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="modal-footer">
+
+						<a href="#" class="btn btn-success"data-dismiss="modal"><i class="icon-thumbs-up icon-white"></i>Gracias, he terminado !</a>
+					</div>
+				</div>
+				<div class="span4">
+					<h2>Modelo M/G/1</h2>
+					<p>
+						Modelo con distribución de llegada exponencial, y llegada aleatoria con 1 servidor.
+					</p>
+					<p>
+						<a class="btn btn-warning btn-large" data-toggle="modal" href="#mg1"><i class="icon-th-large icon-white"></i>Resolver ejercicio &raquo;</a>
+					</p>
+				</div>
+				<div class="modal hide" id="mg1">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							×
+						</button>
+						<h3>Modelo M/G/1</h3>
+					</div>
+					<div class="modal-body">
+						<ul class="nav nav-tabs" id="mg1tabs">
+							<li class="active">
+								<a href="#definicion2">Definición del Modelo</a>
+							</li>
+							<li>
+								<a href="#calculador2">Calculador</a>
+							</li>
+
+						</ul>
+
+						<div class="tab-content">
+							<div class="tab-pane active" id="definicion2">
+
+							</div>
+							<div class="tab-pane" id="calculador2">
+								<form class="well form-inline">
+									<label for="lambda2">&lambda;</label>
+									<input type="text" name="lambda2" class="input-small" id="lambda2"/>
+									<label for="mu2">&mu;</label>
+									<input type="text" name="mu2" class="input-small" id="mu2"/>
+									<label for="omi2">&omicron;</label>
+									<input type="text" name="omi2" class="input-small" id="omi2"/>
+									<a class="btn" id="calc2" href="javascript:void(0);"><i class="icon-cog"></i>Calcula! </a>
+								</form>
+							</div>
+
+						</div>
+					</div>
+					<div class="modal-footer">
+
+						<a href="#" class="btn btn-warning"data-dismiss="modal"><i class="icon-thumbs-up icon-white"></i>Gracias, he terminado!</a>
+					</div>
+				</div>
+				<div class="span4">
+					<h2>Modelo M/M/1/k</h2>
+					<p>
+						Modelo con distribución exponencial de llegada y salida, y 1 servidor.Este modelo tiene capacidad finita k.
+					</p>
+					<p>
+						<a class="btn btn-info btn-large" data-toggle="modal" href="#mm1k"><i class="icon-th-large icon-white"></i>Resolver ejercicio &raquo;</a>
+					</p>
+				</div>
+				<div class="modal hide" id="mm1k">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							×
+						</button>
+						<h3>Modelo M/M/1/k</h3>
+					</div>
+					<div class="modal-body">
+						<ul class="nav nav-tabs" id="mm1ktabs">
+							<li class="active">
+								<a href="#definicion3">Definición del Modelo</a>
+							</li>
+							<li>
+								<a href="#calculador3">Calculador</a>
+							</li>
+
+						</ul>
+
+						<div class="tab-content">
+							<div class="tab-pane active" id="definicion3">
+
+							</div>
+							<div class="tab-pane" id="calculador3">
+								<form class="well form-inline">
+									<label for="lambda3">&lambda;</label>
+									<input type="text" name="lambda3" class="input-small" id="lambda3"/>
+									<label for="mu3">&mu;</label>
+									<input type="text" name="mu3" class="input-small" id="mu3"/>
+									<label for="omi2">&omicron;</label>
+									<input type="text" name="omi3" class="input-small" id="omi3"/>
+									<a class="btn" id="calc3" href="javascript:void(0);"><i class="icon-cog"></i>Calcula! </a>
+								</form>
+							</div>
+
+						</div>
+					</div>
+					<div class="modal-footer">
+
+						<a href="#" class="btn btn-info"data-dismiss="modal"><i class="icon-thumbs-up icon-white"></i>Gracias, he terminado!</a>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<footer>
+				<p>
+					&copy; Col.Us 2012
+				</p>
+			</footer>
+
+		</div>
+		<!-- /container -->
+
+		<!-- Le javascript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="../assets/js/jquery.js"></script>
+		<script src="../js/funciones.js"></script>
+		<script src="../js/interaccion.js"></script>
+		<script src="../assets/js/bootstrap-transition.js"></script>
+		<script src="../assets/js/bootstrap-alert.js"></script>
+		<script src="../assets/js/bootstrap-modal.js"></script>
+		<script src="../assets/js/bootstrap-dropdown.js"></script>
+		<script src="../assets/js/bootstrap-scrollspy.js"></script>
+		<script src="../assets/js/bootstrap-tab.js"></script>
+		<script src="../assets/js/bootstrap-tooltip.js"></script>
+		<script src="../assets/js/bootstrap-popover.js"></script>
+		<script src="../assets/js/bootstrap-button.js"></script>
+		<script src="../assets/js/bootstrap-collapse.js"></script>
+		<script src="../assets/js/bootstrap-carousel.js"></script>
+		<script src="../assets/js/bootstrap-typeahead.js"></script>
+		<script type="text/javascript">
+			$('#mm1tabs a').click(function(e) {
+				e.preventDefault();
+				$(this).tab('show');
+			});
+			$('#mg1tabs a').click(function(e) {
+				e.preventDefault();
+				$(this).tab('show');
+			});
+			$('#mm1ktabs a').click(function(e) {
+				e.preventDefault();
+				$(this).tab('show');
+			});
+		</script>
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
